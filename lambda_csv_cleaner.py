@@ -202,7 +202,7 @@ def cleaner( wid,  evt, data_pipe_in, direct_pipe_out, reversed_pipe_in, result_
     
     
     out_csv_stream:StringIO = StringIO()
-    create:csv.writer=csv.writer(out_csv_stream,quoting=csv.QUOTE_ALL,  escapechar='\\', quotechar='"', lineterminator='\n') #quoting=csv.QUOTE_NONE, QUOTE_MINIMAL
+    create:csv.writer=csv.writer(out_csv_stream,quoting=csv.QUOTE_ALL,   quotechar='"', lineterminator='\n') #quoting=csv.QUOTE_NONE, QUOTE_MINIMAL
         
 
     spos:int=0
@@ -270,7 +270,7 @@ def cleaner( wid,  evt, data_pipe_in, direct_pipe_out, reversed_pipe_in, result_
                 
                 if on:
                     f = (line for line in r.readlines())
-                    reader:csv.reader = csv.reader(f, delimiter=',', quotechar='"')
+                    reader:csv.reader = csv.reader(f, delimiter=',',  quotechar='"', lineterminator='\n')
 
 
                         
